@@ -1,4 +1,4 @@
-<ion-list>
+<ion-list >
   <ion-item-sliding *ngFor="let list of todoService.lists | donelist:done" (click)="selectList(list)">
     <ion-item (click)="selectList(list)" detail>
       <ion-label>
@@ -8,8 +8,14 @@
         {{ list.tasks.length }}
       </ion-note>
     </ion-item>
-    <ion-item-options>
-      <ion-item-option (click)="deleteList(list)" color="danger">
+
+    <ion-item-options side="start">
+      <ion-item-option (click)="editListName(list);$event.stopPropagation()" color="warning" side="start">
+          <ion-icon name="create" slot="icon-only"></ion-icon>
+      </ion-item-option>
+    </ion-item-options>
+    <ion-item-options side="end">
+      <ion-item-option (click)="deleteList(list);$event.stopPropagation()" color="danger" side="end">
           <ion-icon name="close" slot="icon-only"></ion-icon>
       </ion-item-option>
     </ion-item-options>
