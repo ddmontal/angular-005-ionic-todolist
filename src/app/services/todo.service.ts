@@ -27,6 +27,12 @@ export class TodoService {
     return this.lists.find(list => list.id === id);
   }
 
+  deleteList(list: List) {
+    this.lists = this.lists.filter(list => list.id !== list.id);
+
+    this.saveToStorage();
+  }
+
   saveToStorage() {
     localStorage.setItem('lists', JSON.stringify(this.lists));
   }

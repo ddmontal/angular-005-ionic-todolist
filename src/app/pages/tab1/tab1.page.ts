@@ -1,8 +1,7 @@
 import { Component } from '@angular/core';
-import { TodoService } from 'src/app/services/todo.service';
-import { List } from 'src/app/models/list.model';
-import { Router } from '@angular/router';
 import { AlertController } from '@ionic/angular';
+import { TodoService } from 'src/app/services/todo.service';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-tab1',
@@ -10,7 +9,7 @@ import { AlertController } from '@ionic/angular';
   styleUrls: ['tab1.page.scss']
 })
 export class Tab1Page {
-  constructor(public todoService: TodoService, private router: Router, private alertController: AlertController) {}
+  constructor(private alertController: AlertController, public todoService: TodoService, private router: Router) {}
 
   async addList() {
     // this.router.navigateByUrl('/tabs/tab1/new');
@@ -41,10 +40,5 @@ export class Tab1Page {
     });
 
     await alert.present();
-  }
-
-  selectList(list: List) {
-    this.router.navigate(['tabs', 'tab1', 'new', list.id]);
-
   }
 }
