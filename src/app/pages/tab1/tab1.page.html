@@ -12,6 +12,9 @@
       <ion-label (click)="selectList(list)">
         {{ list.title }}
       </ion-label>
+      <ion-note color="tertiary" slot="end">
+        {{ list.tasks.length }}
+      </ion-note>
     </ion-item>
   </ion-list>
 
