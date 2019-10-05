@@ -42,4 +42,9 @@ export class Tab1Page {
 
     await alert.present();
   }
+
+  selectList(list: List) {
+    this.router.navigate(['tabs', 'tab1', 'new', list.id]);
+
+  }
 }
