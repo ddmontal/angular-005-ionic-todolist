@@ -4,7 +4,7 @@
       <ion-back-button defaultHref="/"></ion-back-button>
     </ion-buttons>
 
-    <ion-title>New List</ion-title>
+    <ion-title>List</ion-title>
   </ion-toolbar>
 </ion-header>
 
@@ -19,7 +19,7 @@
   </ion-list>
 
   <ion-list>
-    <ion-list-header>
+    <ion-list-header *ngIf="list.tasks.length > 0">
       <ion-label>
         Tasks
       </ion-label>
